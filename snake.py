@@ -15,7 +15,7 @@ class Snake:
         self.head = self.start_snake[0]
 
     def startSnake(self):
-        for turtle in range(3):
+        for turtle in range(43):
             self.new_segment(turtle, None)
 
     def move(self):
