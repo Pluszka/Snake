@@ -1,6 +1,10 @@
 from turtle import Turtle
-import time
+
 MOVE = 20
+UP = 90
+DOWN = 270
+RIGHT = 0
+LEFT = 180
 
 class Snake:
 
@@ -26,18 +30,21 @@ class Snake:
         self.head.forward(MOVE)
 
     def up(self):
-        self.head.setheading(90)
-        time.sleep(0.1)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
 
     def down(self):
-        self.head.setheading(270)
-        time.sleep(0.1)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
+
 
     def right(self):
-        self.head.setheading(0)
-        time.sleep(0.1)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
+
 
     def left(self):
-        self.head.setheading(180)
-        time.sleep(0.1)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
+
