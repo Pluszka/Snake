@@ -1,5 +1,7 @@
-import turtle
 from turtle import Turtle
+ALIGNMENT = 'center'
+FONT = ("Rockwell", 15, 'bold')
+
 
 class ScoreBoard(Turtle):
 
@@ -7,11 +9,19 @@ class ScoreBoard(Turtle):
         super().__init__()
         self.score = 0
         self.hideturtle()
-        self.goto(0,300)
+        self.goto(0, 300)
         self.color('white')
-        self.write(f'Current Score: {self.score}', align='center',font=("Rockwell", 15, 'bold'))
+        self.prompt()
 
-    def upadetScore(self):
+    def prompt(self):
+        self.write(f'Current Score: {self.score}', align=ALIGNMENT, font=FONT)
+
+    def upadateScore(self):
         self.score += 1
         self.clear()
-        self.write(f'Current Score: {self.score}', align='center',font=("Rockwell", 15, 'bold'))
+        self.prompt()
+
+    def game_over(self):
+        self.setposition(0,0)
+        self.write('GAME OVER', align=ALIGNMENT, font=FONT)
+

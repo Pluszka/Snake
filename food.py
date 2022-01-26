@@ -12,7 +12,6 @@ class Food(Turtle):
         self.color('green')
         self.refresh()
 
-
     def refresh(self):
         rand_x = random.randint(-280, 280)
         rand_y = random.randint(-305, 280)
