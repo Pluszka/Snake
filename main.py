@@ -9,7 +9,6 @@ screen.setup(width=600, height=650)
 screen.bgcolor('black')
 screen.title('Snake')
 screen.tracer(0)
-player_score = 0
 
 snake = Snake()
 food = Food()
@@ -29,6 +28,6 @@ while game_on:
 
     if snake.head.distance(food) < 20:
         food.refresh()
-        player_score +=1
+        score_board.upadetScore()
 
 screen.exitonclick()

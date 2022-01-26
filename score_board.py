@@ -10,3 +10,8 @@ class ScoreBoard(Turtle):
         self.goto(0,300)
         self.color('white')
         self.write(f'Current Score: {self.score}', align='center',font=("Rockwell", 15, 'bold'))
+
+    def upadetScore(self):
+        self.score += 1
+        self.clear()
+        self.write(f'Current Score: {self.score}', align='center',font=("Rockwell", 15, 'bold'))
