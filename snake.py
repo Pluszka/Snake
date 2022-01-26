@@ -16,11 +16,7 @@ class Snake:
 
     def startSnake(self):
         for turtle in range(3):
-            andy = Turtle(shape='square')
-            andy.color('white')
-            andy.penup()
-            andy.setposition(x=0 - turtle * 20, y=0)
-            self.start_snake.append(andy)
+            self.new_segment(turtle, None)
 
     def move(self):
         for sq in range(len(self.start_snake) - 1, 0, -1):
@@ -44,3 +40,17 @@ class Snake:
     def left(self):
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
+
+
+    def new_segment(self, parts, position):
+        andy = Turtle(shape='square')
+        andy.color('white')
+        andy.penup()
+        if parts != None:
+            andy.setposition(x=0 - parts * 20, y=0)
+        else:
+            andy.setposition(position)
+        self.start_snake.append(andy)
+
+    def grow(self):
+        self.new_segment(None, self.start_snake[-1].position())
