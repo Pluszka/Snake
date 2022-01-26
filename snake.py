@@ -1,4 +1,6 @@
 from turtle import Turtle
+import time
+MOVE = 20
 
 class Snake:
 
@@ -21,6 +23,25 @@ class Snake:
             new_x = self.start_snake[sq - 1].xcor()
             new_y = self.start_snake[sq - 1].ycor()
             self.start_snake[sq].setposition(new_x, new_y)
-        first_sqx = self.start_snake[0].xcor()
-        first_sqy = self.start_snake[0].ycor()
-        self.start_snake[0].setposition(first_sqx + 20, first_sqy)
+        self.start_snake[0].forward(MOVE)
+
+    def up(self):
+        self.start_snake[0].setheading(90)
+        self.start_snake[0].forward(MOVE)
+        time.sleep(0.1)
+
+
+    def down(self):
+        self.start_snake[0].setheading(270)
+        self.start_snake[0].forward(MOVE)
+        time.sleep(0.1)
+
+    def right(self):
+        self.start_snake[0].setheading(0)
+        self.start_snake[0].forward(MOVE)
+        time.sleep(0.1)
+
+    def left(self):
+        self.start_snake[0].setheading(180)
+        self.start_snake[0].forward(MOVE)
+        time.sleep(0.1)
