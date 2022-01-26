@@ -6,7 +6,7 @@ from score_board import ScoreBoard
 
 screen = Screen()
 screen.setup(width=600, height=650)
-screen.bgcolor('black')
+screen.bgcolor('#4D5057')
 screen.title('Snake')
 screen.tracer(0)
 

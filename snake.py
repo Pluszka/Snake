@@ -44,7 +44,7 @@ class Snake:
 
     def new_segment(self, parts, position):
         andy = Turtle(shape='square')
-        andy.color('white')
+        andy.color('#4E6E5D')
         andy.penup()
         if parts != None:
             andy.setposition(x=0 - parts * 20, y=0)

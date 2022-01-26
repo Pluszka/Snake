@@ -9,8 +9,9 @@ class ScoreBoard(Turtle):
         super().__init__()
         self.score = 0
         self.hideturtle()
+        self.penup()
         self.goto(0, 300)
-        self.color('white')
+        self.color('#F2E2D2')
         self.prompt()
 
     def prompt(self):
