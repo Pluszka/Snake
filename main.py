@@ -17,11 +17,14 @@ screen.onkey(snake.up, 'Up')
 screen.onkey(snake.down, 'Down')
 screen.onkey(snake.left, 'Left')
 screen.onkey(snake.right, 'Right')
-
+#TODO detect colision with food
 game_on = True
 while game_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
+
+    if snake.head.distance(food) < 15:
+        food.refresh()
 
 screen.exitonclick()
