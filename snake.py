@@ -7,7 +7,7 @@ class Snake:
     def __init__(self):
         self.start_snake = []
         self.startSnake()
-
+        self.head = self.start_snake[0]
 
     def startSnake(self):
         for turtle in range(3):
@@ -23,25 +23,21 @@ class Snake:
             new_x = self.start_snake[sq - 1].xcor()
             new_y = self.start_snake[sq - 1].ycor()
             self.start_snake[sq].setposition(new_x, new_y)
-        self.start_snake[0].forward(MOVE)
+        self.head.forward(MOVE)
 
     def up(self):
-        self.start_snake[0].setheading(90)
-        self.start_snake[0].forward(MOVE)
+        self.head.setheading(90)
         time.sleep(0.1)
 
 
     def down(self):
-        self.start_snake[0].setheading(270)
-        self.start_snake[0].forward(MOVE)
+        self.head.setheading(270)
         time.sleep(0.1)
 
     def right(self):
-        self.start_snake[0].setheading(0)
-        self.start_snake[0].forward(MOVE)
+        self.head.setheading(0)
         time.sleep(0.1)
 
     def left(self):
-        self.start_snake[0].setheading(180)
-        self.start_snake[0].forward(MOVE)
+        self.head.setheading(180)
         time.sleep(0.1)
