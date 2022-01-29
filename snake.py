@@ -11,10 +11,10 @@ class Snake:
 
     def __init__(self):
         self.start_snake = []
-        self.startSnake()
+        self.create_snake()
         self.head = self.start_snake[0]
 
-    def startSnake(self):
+    def create_snake(self):
         for turtle in range(3):
             self.new_segment(turtle, None)
 
@@ -41,7 +41,6 @@ class Snake:
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
 
-
     def new_segment(self, parts, position):
         andy = Turtle(shape='square')
         andy.color('#4E6E5D')
@@ -54,3 +53,10 @@ class Snake:
 
     def grow(self):
         self.new_segment(None, self.start_snake[-1].position())
+
+    def reset_snake(self):
+        for seg in self.start_snake:
+            seg.th()
+        self.start_snake.clear()
+        self.create_snake()
+        self.head = self.start_snake[0]

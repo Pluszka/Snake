@@ -19,17 +19,11 @@ class ScoreBoard(Turtle):
         self.clear()
         self.write(f'Current Score: {self.score}    High Score: {self.highest_score}', align=ALIGNMENT, font=FONT)
 
-    def upadateScore(self):
+    def updateScore(self):
         self.score += 1
         self.prompt()
-
-    # def game_over(self):
-    #     self.setposition(0,0)
-    #     self.write('GAME OVER', align=ALIGNMENT, font=FONT)
 
     def reset_score(self):
         if self.score > self.highest_score:
             self.highest_score = self.score
         self.score = 0
-
-
