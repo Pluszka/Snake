@@ -56,7 +56,7 @@ class Snake:
 
     def reset_snake(self):
         for seg in self.start_snake:
-            seg.th()
+            seg.ht()
         self.start_snake.clear()
         self.create_snake()
         self.head = self.start_snake[0]

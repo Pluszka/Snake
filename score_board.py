@@ -27,3 +27,4 @@ class ScoreBoard(Turtle):
         if self.score > self.highest_score:
             self.highest_score = self.score
         self.score = 0
+        self.prompt()
