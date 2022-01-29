@@ -31,7 +31,7 @@ while game_on:
         snake.grow()
         score_board.upadateScore()
 
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 295 or snake.head.ycor() < -315:
+    if snake.head.xcor() > 300 or snake.head.xcor() < -300 or snake.head.ycor() > 295 or snake.head.ycor() < -315:
         game_on = False
         score_board.game_over()
 
