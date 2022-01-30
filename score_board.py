@@ -1,3 +1,5 @@
+with open('high_score.txt', 'r') as file:
+    high_score = int(file.readline())
 from turtle import Turtle
 ALIGNMENT = 'center'
 FONT = ("Rockwell", 15, 'bold')
@@ -8,7 +10,7 @@ class ScoreBoard(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.highest_score = 0
+        self.highest_score = high_score
         self.hideturtle()
         self.penup()
         self.goto(0, 300)
@@ -26,5 +28,7 @@ class ScoreBoard(Turtle):
     def reset_score(self):
         if self.score > self.highest_score:
             self.highest_score = self.score
+            with open('high_score.txt', 'w') as file1:
+                file1.write(f'{self.highest_score}')
         self.score = 0
         self.prompt()
